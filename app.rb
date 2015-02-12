@@ -51,16 +51,18 @@ end
 # PUT /users/:id - update a user's info based on the form from GET /users/:id
 
 put '/users/:id' do
-  user = users[params[:id].to_i]
-  user[:first] = params[:first]
-  user[:last] = params[:last]
+  users.each do |user|
+    if user[:id] == params[:id].to_i
+      user[:first] = params[:first]
+      user[:last] = params[:last]
+    end
+  end
   redirect to '/'
 end
 
 # DELETE /users/:id - delete a user by their id
 
 delete '/users/:id' do
-  users.delete_if { |user| user == users[params[:id].to_i] }
   redirect to '/'
 end
 

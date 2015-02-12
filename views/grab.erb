@@ -8,19 +8,19 @@
   <script src = "/hello.js"></script>
 </head>
 <body>
-  <h1>Edit this bro or broette!</h1>
+  <h2>Edit this user</h2>
 
-  <form action="/users/:id" method="post">
-    <input type="hidden" name="_method" value="put">
-      First Name: <input type="text" name="first" value="<%= @user[:first]%>">
-      Last Name: <input type="text" name="last" value="<%= @user[:last]%>">
-    <input type="submit" value="Update User">
-  </form>
+    <form action="/users/<%= @user[:id]%>" method="post">
+      <input type="hidden" name="_method" value="put">
+        First Name: <input type="text" name="first" value="<%= @user[:first]%>">
+        Last Name: <input type="text" name="last" value="<%= @user[:last]%>">
+      <input type="submit" value="Update User">
+    </form>
 
-  <form action="/users/:id" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete User">
-  </form>
+    <form action="/users/:id" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete User">
+    </form>
 
 <p>
   <a href="/">NM LOL! Take me back.</a>
