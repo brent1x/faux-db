@@ -8,12 +8,15 @@
   <script src = "/hello.js"></script>
 </head>
 <body>
-  <h1>Here are our users!</h1>
-  <% @users.each do |user| %>
-    <h2><%= user[:first]%> <%= user[:last]%> <%= user[:id]%></h2><a href="/users/<%= user[:id]%>">Edit a user!</a>
-  <% end %>
-  <p>
-    <a href="/users/new">Add a user!</a>
-  </p>
+<h2>Create user</h2>
+
+<form action="/users" method="post">
+  First Name: <input type="text" name="first">
+  Last Name: <input type="text" name="last">
+  <input type="submit" value="Create User">
+</form>
+
 </body>
 </html>
+
+
